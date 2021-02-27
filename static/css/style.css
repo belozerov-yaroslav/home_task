@@ -1,0 +1,27 @@
+.mars_label{
+    display: block;
+}
+
+.tabb {
+	padding-left: 40px;
+}
+
+.card_center {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.id_card {
+	display: inline-block;
+}
+
+form.login_form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+    background-color: #ffcc00;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+}
