@@ -30,21 +30,17 @@ class RegisterForm(FlaskForm):
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
-    print('yep')
     if form.validate_on_submit():
-        print('sended')
         if form.password.data != form.password_again.data:
             return render_template('register.html', title='Регистрация',
                                    form=form,
                                    message="Parols must be equal")
-        print('db sess created')
         db_session.global_init('ORM/db/mars_explorer.db')
         db_sess = db_session.create_session()
         if db_sess.query(User).filter(User.email == form.email.data).first():
             return render_template('register.html', title='Регистрация',
                                    form=form,
                                    message="This email is currently using")
-        print('reached user add')
         user = User(
             name=form.name.data,
             surname=form.surname.data,
